@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>daredevil sn1 ep1</title>
+		<meta charset="UTF8">
+		<meta name="author" content="Joseph Mathe">
+		<meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+		<meta name="keywords" content="movies, daredevil, season1, episode1">
+		<!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+		<style type="text/css">
+			/* Preset Data */
+			a{
+				text-decoration: none;
+				cursor: pointer;
+				color: rgba(230,230,255,.4);
+			}
+			body{
+				background-color: rgba(0,0,0,.95);
+				overflow-x: hidden;
+				color: rgba(230,230,255,.4);
+				margin: 0%;
+				padding: 0%;
+				font-size: 15px;
+				font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+			}
+			ul{
+				list-style: none;
+			}
+			ol{
+				list-style: none;
+			}
+
+
+			/* head */
+			.head{
+				background-color: black;
+				display: flex;
+				align-items: center;
+				padding: 0.4%;
+				width: 100%;
+			}
+			.head img{
+				padding-left: 0.9%;
+			}
+			.head ul{
+				display: flex;
+				float: left;
+			}
+			.head ul a{
+				color: #adb5bd;
+				margin-left: 40px;
+			}
+			.head ul a:hover{
+				color: dodgerblue;
+			}
+			.head input{
+				margin-left: 1.8em;
+				background-color: rgba(255,255,255,.2);
+				color: #adb5bd;
+				border: 1px;
+				height: 45px;
+				width: 320px;
+				border-radius: 50px;
+				padding-left: 40px;
+				font-size: 15px;
+				transition: .3s;
+			}
+			.head input:hover{
+				background-color: rgba(250,250,250,.75);
+				color: rgba(0, 0, 0, .34);
+			}
+			.login{
+				width: 20%;
+				text-align: right;
+				transition: o.3s;
+			}
+			.login:hover{
+				color: rgba(250,250,250,.9);
+				cursor: pointer;
+			}
+
+
+			/* Navigation Bar */
+			.nav{
+				color: #adb5bd;
+			}
+			.nav ol{
+				margin: 0%;
+				display: flex;
+				padding-top: 12px;
+				padding-bottom: 12px;
+			}
+			.nav ol a{
+				color: #adb5bd;
+			}
+
+
+			/* Background Image */
+			.thevid{
+				background-image: url("fringe.jpg");
+				height: 114vh;
+				max-width: 100%;
+				overflow: hidden;
+				background-size: cover;
+				background-position: top 0% right 0%;
+				filter: brightness(50%);
+			}
+			/*Video */
+			.thevid video{
+				width: 97.2%;
+				margin-left: 1.4%;
+				margin-right: 1.4%;
+			}
+
+
+			/* Controls */
+			.control{
+				margin-left: 1.4%;
+				margin-right: 1.4%;
+				margin-top: 20px;
+			}
+			.control button{
+				color: rgba(230,230,255,.4);
+				background-color: rgba(0,0,0,.15);
+				border: 1px solid rgba(240,240,255,.4);
+				border-radius: 5px;
+				margin-right: 10px;
+				padding-left: 15px;
+				padding-right: 15px;
+				padding-top: 3px;
+				padding-bottom: 3px;
+				margin-bottom: 30px;
+				transition: .3s;
+			}
+			.control button:hover{
+				cursor: pointer;
+				color: rgba(250,250,250,.55);
+				border: 1px solid rgba(250,250,250,.55);
+			}
+
+
+			/* Servers */
+			.server{
+				text-align: center;
+				margin-bottom: 35px;
+			}
+			.server .btns{
+				margin-top: 10px;
+				margin-bottom: 10px;
+				margin-left: 1.4%;
+				margin-right: 1.4%;
+			}
+			.server .btns button{
+				color: #adb5bd;
+				margin-right: 11px;
+				max-width: 104px;
+				min-height: 60px;
+				background-color: rgba(200,200,255,.1);
+				border: 0px;
+				cursor: pointer;
+				border-radius: 5px;
+				text-align: left;
+				transition: .3s;
+			}
+			.server .btns button:hover{
+				background-color: rgba(200,200,255,.2);
+			}
+			.server .btns button:active{
+				background-color: dodgerblue;
+				color: black;
+			}
+			.server .btns span{
+				font-size: 15px;
+			}
+
+
+			/* Episodes */
+			.sn{
+				margin-bottom: 40px;
+				margin-left: 1.4%;
+				margin-right: 1.4%;
+			}
+			.sn .ep{
+
+			}
+			.sn .ep button{
+				font-size: 14px;
+				background-color: rgba(200,220,255,.1);
+				color: #adb5bd;
+				border: 0px;
+				border-radius: 5px;
+				text-align: left;
+				padding-left: 10px;
+				min-width: 254px;
+				min-height: 43px;
+				margin-bottom: 6px;
+				margin-right: 4px;
+			}
+			.sn .ep button:hover{
+				background-color: rgba(200,200,255,.2);
+				cursor: pointer;
+			}
+			.sn .ep button:active{
+				background-color: dodgerblue;
+				color: black;
+			}
+
+
+			/* Description */
+			.description{
+				margin-left: 1.4%;
+				margin-right: 1.4%;
+				height: 100vh;
+				max-width: 100%;
+				display: flex;
+			}
+
+
+			/* Description 1st */
+			.description .icon{
+				min-width: 17%;
+				height: 80vh;
+			}
+			.description .icon img{
+				border: 4px solid rgba(255,255,255,.2);;
+				border-radius: 7px;
+			}
+
+
+			/* Description 2nd */
+			.description .data{
+				max-width: 50%;
+				height: 80vh;
+			}
+			.description .data button{
+				background-color: dodgerblue;
+				border: 0px;
+				border-radius: 3px;
+				font-size: 11px;
+				height: 20px;
+				width: 30px;
+			}
+			.description .data .name{
+				font-size: 48px;
+				margin: 0px;
+				color: #adb5bd;
+			}
+			.description .data span{
+				margin-left: 10px;
+			}
+			.description .data .des{
+				width: 100%;
+				display: flex;
+			}
+			.description .data .des .desc{
+				width: 16%;
+			}
+			.description .data .des .desc2{
+				width: 84%;
+				color: rgba(230,230,255,.6);
+			}
+
+
+			/* description 3rd */
+			.description .others{
+				min-width: 31.8%;
+				padding-left: 10px;
+				height: 900px;
+			}
+			.description .others .dat{
+				font-size: 25px;
+				margin: 0px;
+				color: #adb5bd;
+			}
+			.description .others .dot{
+				font-size: 5px;
+			}
+			.description .others .same{
+				display: flex;
+				justify-content: space-between;
+			}
+			.description .others .watch{
+				height: 260px;
+				margin-top: 10px;
+				margin-bottom: 13px;
+				width: 135px;
+				border: 0px;
+				border-radius: 6px;
+			}
+			.description .others .watch a{
+				color: #adb5bd;
+			}
+			.description .others .watch img{
+				width: 135px;
+				border: 0px;
+				border-radius: 6px;
+			}
+
+			.description .others .watch img:hover{
+				background-image: url("play.png");
+				width: 135px;
+				overflow: hidden;
+				background-size: cover;
+				background-position: top 0% right 0%;
+				filter: brightness(50%);
+
+			}
+			.description .others .watch p{
+				margin: 0px;
+			}
+			.description .others .watch .d{
+				display: flex;
+				justify-content: space-between;
+			}
+			.description .others .watch .d button{
+				color: #adb5bd;
+				background-color: rgba(0,0,0,.15);
+				border: 1px solid rgba(255,255,255,.3);
+			}
+
+
+			/* commento */
+			.commento{
+				height: 100vh;
+				max-width: 65.1%;
+				margin-left: 1.4%;
+				margin-right: 1.4%;
+				color: #adb5bd;
+			}
+			.comm{
+				font-size: 29px;
+				margin: 0px;
+			}
+			.commento .dot{
+				font-size: 5px;
+			}
+			
+
+		</style>
+	</head>
+
+	<body>
+		<div class="head">
+			<a href="home.html"><img src="images/smileyy.png" width="70px" alt="img"></a>
+			<ul>
+				<li><a href="">Home</a></li>
+				<li><a href="">Genre</a></li>
+				<li><a href="">Country</a></li>
+				<li><a href="">Movies</a></li>
+				<li><a href="">Tv Series</a></li>
+				<li><a href="">Top IMDB</a></li>
+			</ul>
+			<form>
+				<input type="text" placeholder="Enter your keywords" autocomplete="off">
+			</form>
+			<div class="login">
+				<img src="" alt="img">Login/ Register
+			</div>
+		</div>
+
+		<div class="nav">
+			<ol>
+				<a href=""><li>Home /</li></a>
+				<a href=""><li> Tv Series /</li></a>
+				<a href=""><li> Daredevil</li></a>
+			</ol>
+		</div>
+
+		<div class="thevid">
+			<video src="images/Vikings- Valhalla - Official Teaser - Netflix.mp4" loop controls>
+			</video>
+		</div>
+
+		<div class="control">
+			<button>Autoplay</button>
+			<button>Auto next</button>
+			<button>Toggle light</button>
+			<button>Add to list</button>
+			<button>Comment</button>
+			<button>Report Issue</button>
+		</div>
+
+		<div class="server">
+			If current server doesn't work please try other servers down below.
+			<div class="btns">
+				<button>Server <span> Vidstream</span></button>
+				<button>Server <span> MyTheCloud</span></button>
+				<button>Server <span> Filemoon</span></button>
+				<button>Server <span> Streamtape</span></button>
+				<button>Server <span> ExplosiveMedia</span></button>
+			</div>
+		</div>
+
+		<div class="sn">
+			<div><b>Season 1</b> - Sep 09, 2008</div><br>
+			<div class="ep">
+				<button>Episode 1:Pilot</button>
+				<button>Episode 2:Same Old Sob Story</button>
+				<button>Episode 3:The Devils Men</button>
+				<button>Episode 4:How The Turn Tables</button>
+				<button>Episode 5:Evil Incarnate</button>
+
+				<button>Episode 1:Pilot</button>
+				<button>Episode 2:Same Old Sob Story</button>
+				<button>Episode 3:The Devils Men</button>
+				<button>Episode 4:How The Turn Tables</button>
+				<button>Episode 5:Evil Incarnate</button>
+
+				<button>Episode 1:Pilot</button>
+				<button>Episode 2:Same Old Sob Story</button>
+				<button>Episode 3:The Devils Men</button>
+				<button>Episode 4:How The Turn Tables</button>
+				<button>Episode 5:Evil Incarnate</button>
+
+				<button>Episode 1:Pilot</button>
+				<button>Episode 2:Same Old Sob Story</button>
+				<button>Episode 3:The Devils Men</button>
+				<button>Episode 4:How The Turn Tables</button>
+				<button>Episode 5:Evil Incarnate</button>
+			</div>
+		</div>
+
+
+		<div class="description">
+			<div class="icon">
+				<img src="fri.jpg" alt="img" width="190px">
+			</div>
+			<div class="data">
+				<p class="name">Fringe</p>
+				<button>HD</button>
+				<span>8.5</span>
+				<span>na min</span>
+				<p>The FBI teams up with a formerly-institutionalized scientist - who was performing experiments on the fringe of real science - and his son to investigate weird crimes that are seemingly part of a larger pattern, and may be connected with a global company called Massive Dynamic.</p>
+				<div class="des">
+					<div class="desc">
+						<p>Country:</p>
+						<p>Genre:</p>
+						<p>Release:</p>
+						<p>Director:</p>
+						<p>Production:</p>
+						<p>Cast:</p>
+						<p>Tags:</p>
+					</div>
+					<div class="desc2">
+						<p>United States, Canada</p>
+						<p>Drama, Thriller, Sci-Fi, Mystery</p>
+			 			<p>2012-09-28</p>
+						<p>J.J. Abrams,Alex Kurtzman,Roberto Orci</p>
+						<p>Warner Bros Television, Bad Robot, FB2 Films</p>
+						<p>Anna Torv, Joshua Jackson, Jasika Nicole, Lance Reddick, John Noble</p>
+						<p>watch fringe free, watch fringe hd, fringe online, where to watch fringe, fringe free online, fringe, fbi, parallel universe, scientist, harvard university, alternate universe </p>
+					</div>
+				</div>
+			</div>
+
+			<div class="others">
+				<p class="dat">You may also like.</p>
+				<b class="dot">..........................................</b>
+				<div class="same">
+					<div class="watch">
+						<a href=""><img src="fri.jpg" alt="img">
+							<p>Fringe</p>
+						<div class="d">
+							<div>
+								<p>2021 <b>.</b> na mins</p>
+							</div>
+							<div>
+								<button>TV</button>
+							</div>
+						</div></a>
+					</div>
+					<div class="watch">
+						<a href=""><img src="fri.jpg" alt="img">
+							<p>Fringe</p>
+						<div class="d">
+							<div>
+								<p>2021 <b>.</b> na mins</p>
+							</div>
+							<div>
+								<button>TV</button>
+							</div>
+						</div></a>
+					</div>
+					<div class="watch">
+						<a href=""><img src="fri.jpg" alt="img">
+							<p>Fringe</p>
+						<div class="d">
+							<div>
+								<p>2021 <b>.</b> na mins</p>
+							</div>
+							<div>
+								<button>TV</button>
+							</div>
+						</div></a>
+					</div>
+				</div>
+				<div class="same">
+					<div class="watch">
+						<a href=""><img src="fri.jpg" alt="img">
+							<p>Fringe</p>
+						<div class="d">
+							<div>
+								<p>2021 <b>.</b> na mins</p>
+							</div>
+							<div>
+								<button>TV</button>
+							</div>
+						</div></a>
+					</div>
+					<div class="watch">
+						<a href=""><img src="fri.jpg" alt="img">
+							<p>Fringe</p>
+						<div class="d">
+							<div>
+								<p>2021 <b>.</b> na mins</p>
+							</div>
+							<div>
+								<button>TV</button>
+							</div>
+						</div></a>
+					</div>
+					<div class="watch">
+						<a href=""><img src="fri.jpg" alt="img">
+							<p>Fringe</p>
+						<div class="d">
+							<div>
+								<p>2021 <b>.</b> na mins</p>
+							</div>
+							<div>
+								<button>TV</button>
+							</div>
+						</div></a>
+					</div>
+				</div>
+				<div class="same">
+					<div class="watch">
+						<a href=""><img src="fri.jpg" alt="img">
+							<p>Fringe</p>
+						<div class="d">
+							<div>
+								<p>2021 <b>.</b> na mins</p>
+							</div>
+							<div>
+								<button>TV</button>
+							</div>
+						</div></a>
+					</div>
+					<div class="watch">
+						<a href=""><img src="fri.jpg" alt="img">
+							<p>Fringe</p>
+						<div class="d">
+							<div>
+								<p>2021 <b>.</b> na mins</p>
+							</div>
+							<div>
+								<button>TV</button>
+							</div>
+						</div></a>
+					</div>
+					<div class="watch">
+						<a href=""><img src="fri.jpg" alt="img">
+							<p>Fringe</p>
+						<div class="d">
+							<div>
+								<p>2021 <b>.</b> na mins</p>
+							</div>
+							<div>
+								<button>TV</button>
+							</div>
+						</div></a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="commento">
+			<p class="comm">Comment</p>
+			<p class="dot">.........................................</p>
+
+		</div>
+
+		
+	<script type="text/javascript">
+		function displaygrade(){
+			var S_marks=document.getElementById("my_marks").value;
+			if (S_marks>=70 && S_marks<=100){
+				document.getElementById("my_grade").value="A";
+			}
+			else if (S_marks>=60 && S_marks<=69){
+				document.getElementById("my_grade").value="B";
+			}
+			else if (S_marks>=50 && S_marks<=59){
+				document.getElementById("my_grade").value="C";
+			}
+			else if (S_marks>=40 && S_marks<=49){
+				document.getElementById("my_grade").value="D";
+			}
+			else if (S_marks>=0 && S_marks<=39){
+				document.getElementById("my_grade").value="E";
+			}
+			else if (S_marks>100){
+				document.getElementById("my_grade").value="INVALID";
+			}
+			else if (S_marks<0){
+				document.getElementById("my_grade").value="INVALID";
+			}
+			}
+	</script>
+	</body>
+</html>
